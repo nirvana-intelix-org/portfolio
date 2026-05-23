@@ -12,6 +12,7 @@ type Project = {
   stack: string[];
   span: string;
   swatch: string;
+  screenshot: string;
   flagship?: boolean;
 };
 
@@ -34,6 +35,7 @@ const projects: Project[] = [
     ],
     span: "md:col-span-12",
     swatch: "from-[#15161a] to-[#2a2c33]",
+    screenshot: "/screenshots/webziq.png",
     flagship: true,
   },
   {
@@ -48,6 +50,7 @@ const projects: Project[] = [
     stack: ["Next.js", "Node.js", "OpenAI", "PostgreSQL", "Stripe / local pay"],
     span: "md:col-span-7",
     swatch: "from-[#1b6359] to-[#0f3d36]",
+    screenshot: "/screenshots/khatrak.png",
   },
   {
     n: "02",
@@ -60,6 +63,7 @@ const projects: Project[] = [
     stack: ["Node.js", "OpenAI", "Social APIs", "WhatsApp"],
     span: "md:col-span-5",
     swatch: "from-[#bd5a1a] to-[#7e3a0e]",
+    screenshot: "/screenshots/posteds.png",
   },
   {
     n: "03",
@@ -72,6 +76,7 @@ const projects: Project[] = [
     stack: ["BigCommerce", "Next.js", "OpenAI", "Stripe"],
     span: "md:col-span-5",
     swatch: "from-[#2d5e84] to-[#1a3b56]",
+    screenshot: "/screenshots/menue.png",
   },
   {
     n: "04",
@@ -85,6 +90,7 @@ const projects: Project[] = [
     stack: ["Next.js", "Node.js", "SMSA API", "PostgreSQL"],
     span: "md:col-span-7",
     swatch: "from-[#2a4d3a] to-[#162b21]",
+    screenshot: "/screenshots/sedanah.png",
   },
   {
     n: "05",
@@ -98,6 +104,7 @@ const projects: Project[] = [
     stack: ["Next.js", "OpenAI", "Arabic NLP"],
     span: "md:col-span-6",
     swatch: "from-[#6a3486] to-[#3d1d53]",
+    screenshot: "/screenshots/qasati.png",
   },
   {
     n: "06",
@@ -111,6 +118,7 @@ const projects: Project[] = [
     stack: ["Node.js", "Next.js", "Social APIs"],
     span: "md:col-span-6",
     swatch: "from-[#7a1f3b] to-[#4a1024]",
+    screenshot: "/screenshots/sehacall.png",
   },
   {
     n: "07",
@@ -124,6 +132,7 @@ const projects: Project[] = [
     stack: ["Next.js", "Node.js", "Booking flows", "PostgreSQL"],
     span: "md:col-span-5",
     swatch: "from-[#bd5a1a] to-[#7e3a0e]",
+    screenshot: "/screenshots/mubdun.png",
   },
   {
     n: "08",
@@ -136,6 +145,7 @@ const projects: Project[] = [
     stack: ["Node.js", "Next.js", "PostgreSQL", "Realtime"],
     span: "md:col-span-7",
     swatch: "from-[#1f4f7a] to-[#102c45]",
+    screenshot: "/screenshots/organesh.png",
   },
 ];
 
@@ -173,11 +183,37 @@ export default function Projects() {
                   href={p.url}
                   target="_blank"
                   rel="noreferrer"
-                  className={`bento bento-hover group relative flex h-full flex-col p-7 ${
-                    p.flagship ? "border-copper/30 bg-paper-raised md:p-10" : ""
+                  className={`bento bento-hover group relative flex h-full flex-col overflow-hidden ${
+                    p.flagship ? "border-copper/30 bg-paper-raised" : ""
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-4">
+                  {/* Screenshot banner */}
+                  <div
+                    className={`relative overflow-hidden border-b border-ink-line bg-gradient-to-br ${p.swatch} ${
+                      p.flagship ? "aspect-[21/9]" : "aspect-[16/10]"
+                    }`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.screenshot}
+                      alt={`${p.title} live site`}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/30 to-transparent" />
+                    <span
+                      className={`absolute top-3 right-3 pill whitespace-nowrap backdrop-blur-md ${
+                        p.flagship ? "pill-teal" : "pill-copper"
+                      }`}
+                    >
+                      {p.flagship && (
+                        <span className="h-1.5 w-1.5 rounded-full bg-teal" />
+                      )}
+                      {p.tag}
+                    </span>
+                  </div>
+
+                  <div className={`flex flex-1 flex-col p-6 md:p-7 ${p.flagship ? "md:p-9" : ""}`}>
                     <div className="flex items-center gap-3">
                       <span
                         className={`grid place-items-center rounded-xl bg-gradient-to-br ${p.swatch} font-serif text-white shadow-sm ${
@@ -192,17 +228,6 @@ export default function Projects() {
                         </div>
                       </div>
                     </div>
-                    <span
-                      className={`pill whitespace-nowrap ${
-                        p.flagship ? "pill-teal" : "pill-copper"
-                      }`}
-                    >
-                      {p.flagship && (
-                        <span className="h-1.5 w-1.5 rounded-full bg-teal" />
-                      )}
-                      {p.tag}
-                    </span>
-                  </div>
 
                   <h3
                     className={`mt-5 flex items-baseline gap-3 font-serif text-ink transition group-hover:text-copper ${
@@ -252,6 +277,7 @@ export default function Projects() {
                         </svg>
                       </span>
                     </div>
+                  </div>
                   </div>
                 </a>
               </TiltCard>
