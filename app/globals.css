@@ -19,17 +19,17 @@ body {
 ::selection { background-color: var(--copper); color: var(--paper); }
 
 @layer components {
-  .container-px { @apply mx-auto w-full max-w-7xl px-6 md:px-10; }
-  .section-pad { @apply py-24 md:py-36; }
+  .container-px { @apply mx-auto w-full max-w-7xl px-5 md:px-10; }
+  .section-pad { @apply py-16 md:py-28; }
 
   .section-number {
     @apply font-mono text-xs uppercase tracking-[0.25em] text-ink-dim;
   }
 
   .display { @apply font-serif font-normal leading-[0.95] tracking-tightest text-ink; }
-  .display-xl { @apply display text-[clamp(3.2rem,9vw,7.5rem)]; }
-  .display-lg { @apply display text-[clamp(2.4rem,6vw,4.8rem)]; }
-  .display-md { @apply display text-[clamp(1.8rem,4vw,3rem)]; }
+  .display-xl { @apply display text-[clamp(2.6rem,7vw,5.4rem)]; }
+  .display-lg { @apply display text-[clamp(2rem,5vw,3.8rem)]; }
+  .display-md { @apply display text-[clamp(1.6rem,3.5vw,2.6rem)]; }
 
   .text-body { @apply text-[15px] leading-relaxed text-ink-muted md:text-base; }
 
