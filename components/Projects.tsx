@@ -126,7 +126,7 @@ const projects: Project[] = [
     arabic: "مبدئون",
     tag: "Co-working + Incubator",
     category: "Saudi Vision 2030 aligned",
-    url: "https://mubdun.com",
+    url: "https://mubdun.info",
     summary:
       "Co-working spaces, shared offices and business incubation for entrepreneurs and SMEs in Saudi Arabia. Quarterly / semi-annual / annual packages, meeting rooms, 24/7 access, free consulting, networking.",
     stack: ["Next.js", "Node.js", "Booking flows", "PostgreSQL"],
