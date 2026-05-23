@@ -182,7 +182,7 @@ function LiveProductsBento() {
               className="group/p relative flex flex-col items-center justify-center gap-2 bg-paper-raised p-3 text-center transition hover:bg-paper sm:flex-row sm:items-center sm:gap-2.5 sm:text-left sm:p-4"
             >
               <span
-                className={`grid h-8 w-8 flex-shrink-0 place-items-center rounded-lg bg-gradient-to-br ${p.swatch} font-serif text-xs text-white shadow-sm`}
+                className={`grid h-8 w-8 flex-shrink-0 place-items-center rounded-lg bg-gradient-to-br ${p.swatch} font-serif text-xs text-white shadow-sm transition-transform group-hover/p:scale-110 group-hover/p:rotate-3`}
               >
                 {p.name.slice(0, 1)}
               </span>
